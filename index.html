@@ -3,76 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>####</title>
+<title>Litle Dream</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Orbitron', sans-serif; }
-body { background: #010101; color: #bbb; overflow-x:hidden; cursor:none; }
-.cursor { width: 15px; height: 15px; border: 2px solid #888; border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); transition: transform 0.1s ease; z-index: 1000; }
-header { position: relative; height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; animation: fadeIn 2s ease forwards; }
-header h1 { font-size: 4em; color: inherit; opacity: 1; }
-header img { width: 300px; margin-top:20px; opacity: 0; transform: translateY(50px); animation: floatIn 2s 1s forwards; }
-section { padding:80px 20px; max-width:1000px; margin:auto; background:#020202; border-radius:10px; opacity:0; transform: translateY(30px); animation: fadeIn 1.5s forwards; animation-delay: 1s; }
-section h2 { font-size:2.5em; text-align:center; margin-bottom:40px; color:#888; position: relative; }
-section h2::after { content:''; display:block; width:50px; height:2px; background:#888; margin:10px auto 0; animation: slideIn 1s forwards; }
-section p { font-size:1.05em; color:#888; line-height:1.6; text-align:center; }
-footer { text-align:center; padding:20px; background:#010101; color:#333; margin-top:30px; opacity:0; transform: translateY(20px); animation: fadeIn 1s forwards; animation-delay: 1.5s; }
-@keyframes fadeIn { to { opacity:1; transform: translateY(0); } }
-@keyframes floatIn { to { opacity:1; transform: translateY(0); } }
-@keyframes slideIn { from { width:0; } to { width:50px; } }
-#animated-text { font-size: 4em; color: white; letter-spacing: 0.1em; font-family: 'Orbitron', sans-serif; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Orbitron', sans-serif; }
+body {
+  background:#010101;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
+  overflow:hidden;
+}
+h1 {
+  font-size:2em;
+  letter-spacing:0.05em;
+  animation: fadeIn 3s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity:0; transform:scale(0.9); }
+  to { opacity:1; transform:scale(1); }
+}
 </style>
 </head>
 <body>
 
-<div class="cursor"></div>
-
 <audio id="bg-music" loop>
-    <source src="fond.mp3" type="audio/mpeg">
+  <source src="fond.mp3" type="audio/mpeg">
 </audio>
 
-<header>
-    <h1 id="animated-text"></h1>
-    <a href="#"><img src="https://i.ibb.co/ynwShCT1/e68d10e542b2e6b445149eb377476846.jpg" alt="e68d10e542b2e6b445149eb377476846" border="0"></a>
-</header>
+<h1>la vie privée n’est pas un crime<br>c’est une loi</h1>
 
 <script>
-const text = "####";
-const target = document.getElementById("animated-text");
-let index = 0;
-function typeWriter() {
-    if (index < text.length) {
-        target.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 200);
-    }
-}
-typeWriter();
-
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', e => {
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-
 const music = document.getElementById('bg-music');
 music.volume = 0.2;
-music.play().catch(e => {
-    document.addEventListener('click', () => {
-        music.play();
-    }, { once: true });
+music.play().catch(() => {
+  document.addEventListener('click', () => music.play(), { once:true });
 });
 </script>
 
-<section class="greetz">
-    <h2>Greetz</h2>
-    <p>Zekrom, KZH, Prince K, Kewadox, scarlet, Albxtor, insomnie, 306 </p>
-</section>
-
-<footer>
-    &copy; 2025 #### – Tous droits réservés
-</footer>
-
 </body>
 </html>
-
-
