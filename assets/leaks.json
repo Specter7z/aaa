@@ -1,0 +1,575 @@
+[
+  {
+    "date": "2025-10-23",
+    "victim": "Fédération Française de Tir",
+    "details": [
+      "numéro de licence",
+      "état civil",
+      "adresse postale",
+      "email",
+      "numéro de téléphone"
+    ],
+    "volume": "~?",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-10-22",
+    "victim": "Agences Régionales de Santé (Île-de-France, Auvergne, Rhône-Alpes, Hauts-de-France, Pays de la Loire, Normandie)",
+    "details": [
+      "dossiers médicaux"
+    ],
+    "volume": "~34,000,000",
+    "severity": "critical",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-10-19",
+    "victim": "Centre hospitalier intercommunal de Haute-Comté",
+    "details": [
+      "ransomware / indisponibilité"
+    ],
+    "volume": "unknown",
+    "severity": "high",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-10-15",
+    "victim": "Mango (service clients)",
+    "details": [
+      "prénom",
+      "pays",
+      "code postal",
+      "email",
+      "téléphone"
+    ],
+    "volume": "?",
+    "severity": "low",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-10-14",
+    "victim": "Agence Régionale de Santé des Hauts-de-France",
+    "details": [
+      "nom, prénom",
+      "NIR/numéro de sécurité sociale",
+      "données médicales potentielles",
+      "contacts"
+    ],
+    "volume": "?",
+    "severity": "critical",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-10-12",
+    "victim": "Lycées des Hauts-de-France",
+    "details": [
+      "pièces d'identité élèves",
+      "CV",
+      "relevés de notes"
+    ],
+    "volume": "?",
+    "severity": "high",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-10-06",
+    "victim": "France Travail",
+    "details": [
+      "nom, prénom, identifiant France Travail, statut RSA"
+    ],
+    "volume": "5,500",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-10-04",
+    "victim": "Discord (service)",
+    "details": [
+      "noms/pseudos, informations de paiement partielles, 4 derniers chiffres CB, IP, échanges support"
+    ],
+    "volume": "?",
+    "severity": "high",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-09-18",
+    "victim": "Clarins",
+    "details": [
+      "données de contact clients"
+    ],
+    "volume": "100000+",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-08-06",
+    "victim": "Air France",
+    "details": [
+      "nom/prénom, Flying Blue, demandes clients"
+    ],
+    "volume": "?",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-07-11",
+    "victim": "Sorbonne Université",
+    "details": [
+      "emails pro/perso, téléphone, adresse postale, données familiales"
+    ],
+    "volume": "?",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2024-10-25",
+    "victim": "Free",
+    "details": [
+      "abonnés, identifiants abonnés, IBAN partiel"
+    ],
+    "volume": "5,100,000",
+    "severity": "high",
+    "source": "Rapports publics"
+  },
+  {
+    "date": "2024-04-28",
+    "victim": "Ticketmaster (historique)",
+    "details": [
+      "données clients, transactions, 4 derniers chiffres CB"
+    ],
+    "volume": "560,000,000",
+    "severity": "critical",
+    "source": "Enquête"
+  },
+  {
+    "date": "2025-08-12",
+    "victim": "Alltricks",
+    "details": [
+      "intrusion liste de diffusion"
+    ],
+    "volume": "?",
+    "severity": "low",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-07-21",
+    "victim": "Auchan",
+    "details": [
+      "coordonnées clients, telephone, adresse postale, fidélité"
+    ],
+    "volume": "?",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-03-27",
+    "victim": "Oracle Cloud (exposition)",
+    "details": [
+      "authentification LDAP, serveur SSO, clefs d'authentification"
+    ],
+    "volume": "~6,000,000",
+    "severity": "critical",
+    "source": "Rapports"
+  },
+  {
+    "date": "2025-01-24",
+    "victim": "Fédération Française Montagne Escalade",
+    "details": [
+      "nom, prénom, adresse, email, identifiant"
+    ],
+    "volume": "808,881",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-01-20",
+    "victim": "Fédération Française tir à l'arc",
+    "details": [
+      "nom, prénom, date de naissance, adresse postale, téléphone, email"
+    ],
+    "volume": "625,434",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2024-12-31",
+    "victim": "Cogitis",
+    "details": [
+      "données (gros dump)"
+    ],
+    "volume": "82GB",
+    "severity": "high",
+    "source": "Rapports"
+  },
+  {
+    "date": "2025-02-21",
+    "victim": "Fédération Française de Foot",
+    "details": [
+      "nom, prénom, photo, justificatif d'identité"
+    ],
+    "volume": "?",
+    "severity": "medium",
+    "source": "Bonjour la fuite"
+  },
+  {
+    "date": "2025-01-01",
+    "victim": "Organisation_Test_0",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "100",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-02-02",
+    "victim": "Organisation_Test_1",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "110",
+    "severity": "medium",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-03-03",
+    "victim": "Organisation_Test_2",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "120",
+    "severity": "high",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-04-04",
+    "victim": "Organisation_Test_3",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "130",
+    "severity": "critical",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-05-05",
+    "victim": "Organisation_Test_4",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "140",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-06-06",
+    "victim": "Organisation_Test_5",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "150",
+    "severity": "medium",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-07-07",
+    "victim": "Organisation_Test_6",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "160",
+    "severity": "high",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-08-08",
+    "victim": "Organisation_Test_7",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "170",
+    "severity": "critical",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-09-09",
+    "victim": "Organisation_Test_8",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "180",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-01-10",
+    "victim": "Organisation_Test_9",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "190",
+    "severity": "medium",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-02-11",
+    "victim": "Organisation_Test_10",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "200",
+    "severity": "high",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-03-12",
+    "victim": "Organisation_Test_11",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "210",
+    "severity": "critical",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-04-13",
+    "victim": "Organisation_Test_12",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "220",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-05-14",
+    "victim": "Organisation_Test_13",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "230",
+    "severity": "medium",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-06-15",
+    "victim": "Organisation_Test_14",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "240",
+    "severity": "high",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-07-16",
+    "victim": "Organisation_Test_15",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "250",
+    "severity": "critical",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-08-17",
+    "victim": "Organisation_Test_16",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "260",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-09-18",
+    "victim": "Organisation_Test_17",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "270",
+    "severity": "medium",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-01-19",
+    "victim": "Organisation_Test_18",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "280",
+    "severity": "high",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-02-20",
+    "victim": "Organisation_Test_19",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "290",
+    "severity": "critical",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-03-21",
+    "victim": "Organisation_Test_20",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "300",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-04-22",
+    "victim": "Organisation_Test_21",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "310",
+    "severity": "medium",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-05-23",
+    "victim": "Organisation_Test_22",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "320",
+    "severity": "high",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-06-24",
+    "victim": "Organisation_Test_23",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "330",
+    "severity": "critical",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-07-25",
+    "victim": "Organisation_Test_24",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "340",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-08-26",
+    "victim": "Organisation_Test_25",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "350",
+    "severity": "medium",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-09-27",
+    "victim": "Organisation_Test_26",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "360",
+    "severity": "high",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-01-28",
+    "victim": "Organisation_Test_27",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "370",
+    "severity": "critical",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-02-01",
+    "victim": "Organisation_Test_28",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "380",
+    "severity": "low",
+    "source": "flux-test"
+  },
+  {
+    "date": "2025-03-02",
+    "victim": "Organisation_Test_29",
+    "details": [
+      "email",
+      "nom",
+      "téléphone"
+    ],
+    "volume": "390",
+    "severity": "medium",
+    "source": "flux-test"
+  }
+]
