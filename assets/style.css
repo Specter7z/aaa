@@ -5,22 +5,21 @@
   --accent: #10b981;
   --accent-2: #06b6d4;
   --glass: rgba(255, 255, 255, 0.03);
-  --shadow: rgba(0, 0, 0, 0.4);
+  --shadow: rgba(0, 0, 0, 0.6);
 }
 
-/* Global Reset & Box Sizing */
+/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-/* Body / Background / Fonts */
 body.wp-bg {
   background: linear-gradient(180deg, #041020 0%, var(--bg) 100%);
   color: #dbeafe;
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   line-height: 1.5;
+  min-height: 100vh;
 }
 
 /* Container */
@@ -28,21 +27,23 @@ body.wp-bg {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
+  width: 100%;
 }
 
 /* Header */
 .wp-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   background: var(--panel);
   padding: 12px 0;
 }
 .wp-header.small .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Brand / Logo */
+/* Logo / Brand */
 .brand {
   display: flex;
   gap: 12px;
@@ -57,9 +58,10 @@ body.wp-bg {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: var(--accent);
+  color: #fff; /* plus visible */
   font-family: monospace;
   box-shadow: 0 4px 12px var(--shadow);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
 /* Navigation */
@@ -68,97 +70,93 @@ body.wp-bg {
   margin-left: 14px;
   text-decoration: none;
   font-size: 15px;
-  padding: 8px;
+  padding: 8px 12px;
   border-radius: 6px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
-.nav a:hover {
-  background: rgba(16, 185, 129, 0.2);
+.nav a:hover,
+.nav a:focus {
+  background: rgba(16,185,129,0.2);
+  outline: none;
+  color: #ffffff;
 }
 
 /* Main / Hero */
-.main {
-  padding: 30px 0;
-}
+.main { padding: 30px 0; }
 .hero {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
   padding: 28px;
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--shadow);
+  min-height: 100px;
 }
-.hero h2 {
-  margin: 0;
-  font-size: 26px;
-}
-.muted {
-  color: var(--muted);
-}
+.hero h2 { margin: 0; font-size: 26px; }
+.muted { color: var(--muted); }
 
-/* Buttons / Actions */
-.actions {
-  margin-top: 16px;
-  display: flex;
-  gap: 10px;
-}
+/* Buttons */
+.actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
 .btn {
   background: var(--accent);
   color: #0f172a;
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s;
+  text-align: center;
 }
-.btn:hover {
-  background: var(--accent-2);
-}
+.btn:hover,
+.btn:focus { background: var(--accent-2); outline: none; }
 .btn.ghost {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
 }
-.btn.ghost:hover {
-  background: rgba(255, 255, 255, 0.05);
+.btn.ghost:hover,
+.btn.ghost:focus {
+  background: rgba(16,185,129,0.15);
+  border-color: var(--accent);
+  color: #0f172a;
+}
+
+/* Victim Link */
+button.link.victim {
+  background: rgba(16,185,129,0.1);
+  color: #10b981;
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+button.link.victim:hover,
+button.link.victim:focus {
+  background: var(--accent);
+  color: #0f172a;
+  border-color: var(--accent-2);
+  outline: none;
 }
 
 /* Overview Cards */
-.overview {
-  margin-top: 24px;
-}
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 12px;
-}
+.overview { margin-top: 24px; }
+.cards { display: flex; flex-wrap: wrap; gap: 12px; }
 .card {
   background: var(--panel);
   padding: 16px;
   border-radius: 12px;
-  min-width: 120px;
+  min-width: 140px;
+  flex: 1 1 200px;
   text-align: center;
-  flex: 1;
-  box-shadow: 0 4px 8px var(--shadow);
+  box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px var(--shadow);
-}
-.num {
-  font-size: 20px;
-  font-weight: 700;
-}
-.small {
-  font-size: 13px;
-}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px var(--shadow); }
+.num { font-size: 20px; font-weight: 700; }
+.small { font-size: 13px; }
 
-/* How / Panels */
-.how {
-  margin-top: 18px;
-  background: var(--panel);
-  padding: 18px;
-  border-radius: 12px;
-}
+/* Panels */
+.how { margin-top: 18px; background: var(--panel); padding: 18px; border-radius: 12px; }
 
 /* Table */
 .table-wrap {
@@ -169,50 +167,50 @@ body.wp-bg {
   overflow-x: auto;
   box-shadow: 0 4px 12px var(--shadow);
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-}
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px; }
 thead th {
   padding: 10px;
   text-align: left;
   color: var(--muted);
   font-weight: 600;
+  white-space: nowrap;
 }
 tbody td {
   padding: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  vertical-align: middle;
 }
 
 /* Toolbar / Inputs */
 .toolbar {
   display: flex;
   gap: 10px;
-  align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 8px;
 }
 .toolbar input {
-  flex: 1;
+  flex: 1 1 150px;
   padding: 8px;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
   color: inherit;
 }
-.toolbar select,
-.toolbar button {
+.toolbar select, .toolbar button {
   padding: 8px;
   border-radius: 6px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255,255,255,0.05);
   color: inherit;
   cursor: pointer;
   transition: all 0.2s;
 }
 .toolbar button:hover,
-.toolbar select:hover {
-  background: rgba(255, 255, 255, 0.05);
+.toolbar select:hover,
+.toolbar button:focus,
+.toolbar select:focus {
+  background: rgba(255,255,255,0.05);
+  outline: none;
 }
 
 /* Sources Grid */
@@ -229,13 +227,11 @@ tbody td {
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.2s;
 }
-.source:hover {
-  transform: translateY(-2px);
-}
+.source:hover { transform: translateY(-2px); }
 
 /* Footer */
 .wp-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255,255,255,0.03);
   padding: 12px;
   margin-top: 20px;
   text-align: center;
@@ -249,8 +245,9 @@ tbody td {
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(2, 6, 23, 0.7);
+  background: rgba(2,6,23,0.85);
   z-index: 999;
+  padding: 10px;
 }
 .modal .modal-inner {
   background: var(--panel);
@@ -258,9 +255,9 @@ tbody td {
   border-radius: 12px;
   max-width: 760px;
   width: 100%;
-  position: relative;
   box-shadow: 0 8px 24px var(--shadow);
-  animation: fadeIn 0.2s ease-out;
+  overflow-y: auto;
+  max-height: 90vh;
 }
 .modal .modal-inner button {
   position: absolute;
@@ -292,8 +289,10 @@ tbody td {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive tweaks */
+/* Responsive Tweaks */
 @media (max-width: 768px) {
   .cards { flex-direction: column; }
   .toolbar { flex-direction: column; align-items: stretch; }
+  table { min-width: 100%; font-size: 13px; }
+  .modal .modal-inner { max-height: 95vh; }
 }
