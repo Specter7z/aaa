@@ -1,11 +1,11 @@
-// WordPirates frontend script - sécurisé
 async function fetchLeaks() {
   try {
     const res = await fetch('assets/leaks.json');
     if (!res.ok) throw new Error('Impossible de charger leaks.json');
     const json = await res.json();
     if (!Array.isArray(json)) throw new Error('Format JSON invalide');
-    return json;
+    // Validation stricte côté client
+    return json.map(validateLeak).slice(0, 500); // limite max 500 leaks
   } catch (e) {
     console.error(e);
     return [];
@@ -22,20 +22,21 @@ function severityBadge(s) {
 }
 
 function escapeHtml(str) {
-  return (str || '').toString().replace(/[&<>"']/g, c =>
-    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])
+  return (str || '').toString().replace(/[&<>"'/]/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '/': '&#x2F;' }[c])
   );
 }
 
-// Validation d'un incident
+// Validation stricte d'un incident
 function validateLeak(leak) {
   return {
-    date: typeof leak.date === 'string' ? leak.date : '',
-    victim: typeof leak.victim === 'string' ? leak.victim : 'inconnu',
-    details: Array.isArray(leak.details) ? leak.details.map(d => typeof d === 'string' ? d : '') : [],
+    date: typeof leak.date === 'string' && leak.date.length <= 20 ? leak.date : '',
+    victim: typeof leak.victim === 'string' && leak.victim.length <= 50 ? leak.victim : 'inconnu',
+    details: Array.isArray(leak.details) ?
+      leak.details.slice(0, 10).map(d => typeof d === 'string' ? d.slice(0, 100) : '') : [],
     severity: ['critical','high','medium','low'].includes(leak.severity) ? leak.severity : 'low',
-    volume: typeof leak.volume === 'string' ? leak.volume : '',
-    source: typeof leak.source === 'string' ? leak.source : ''
+    volume: typeof leak.volume === 'string' && leak.volume.length <= 20 ? leak.volume : '',
+    source: typeof leak.source === 'string' && leak.source.length <= 50 ? leak.source : ''
   };
 }
 
@@ -73,6 +74,7 @@ function openModal(r) {
 
   const leak = validateLeak(r);
 
+  // Tous les contenus passent par escapeHtml pour éviter XSS
   body.innerHTML = `
     <h3>${escapeHtml(leak.victim)}</h3>
     <p class="muted">${escapeHtml(leak.date)} — Source: ${escapeHtml(leak.source)}</p>
@@ -90,86 +92,66 @@ function closeModal() {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const leaks = await fetchLeaks();
-  window.__leaks = leaks.map(validateLeak);
+  window.__leaks = leaks;
   renderTable(window.__leaks);
 
-  // Recherche
   const qInput = document.getElementById('q');
-  if (qInput) {
-    qInput.addEventListener('input', e => {
-      const q = e.target.value.toLowerCase();
-      const filtered = window.__leaks.filter(r =>
-        (r.victim + ' ' + r.details.join(' ') + ' ' + r.source).toLowerCase().includes(q)
-      );
-      renderTable(filtered);
-    });
-  }
+  if (qInput) qInput.addEventListener('input', e => {
+    const q = e.target.value.toLowerCase().slice(0, 100);
+    const filtered = window.__leaks.filter(r =>
+      (r.victim + ' ' + r.details.join(' ') + ' ' + r.source).toLowerCase().includes(q)
+    );
+    renderTable(filtered);
+  });
 
-  // Filtre année
   const filterYear = document.getElementById('filter-year');
-  if (filterYear) {
-    filterYear.addEventListener('change', e => {
-      const y = e.target.value;
-      renderTable(y === 'all' ? window.__leaks : window.__leaks.filter(r => r.date.startsWith(y)));
-    });
-  }
+  if (filterYear) filterYear.addEventListener('change', e => {
+    const y = e.target.value;
+    renderTable(y === 'all' ? window.__leaks : window.__leaks.filter(r => r.date.startsWith(y)));
+  });
 
-  // Filtre gravité
   const filterSev = document.getElementById('filter-sev');
-  if (filterSev) {
-    filterSev.addEventListener('change', e => {
-      const v = e.target.value;
-      renderTable(v === 'all' ? window.__leaks : window.__leaks.filter(r => r.severity === v));
-    });
-  }
+  if (filterSev) filterSev.addEventListener('change', e => {
+    const v = e.target.value;
+    renderTable(v === 'all' ? window.__leaks : window.__leaks.filter(r => r.severity === v));
+  });
 
-  // Export CSV
   const exportBtn = document.getElementById('export');
-  if (exportBtn) {
-    exportBtn.addEventListener('click', () => {
-      const rows = window.__leaks;
-      const headers = ['date','victim','details','volume','severity','source'];
-      const lines = [headers.join(',')];
-      rows.forEach(r => {
-        lines.push([
-          r.date,
-          JSON.stringify(r.victim),
-          JSON.stringify(r.details.join(' | ')),
-          JSON.stringify(r.volume),
-          JSON.stringify(r.severity),
-          JSON.stringify(r.source)
-        ].join(','));
-      });
-      const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'wordpirates-leaks.csv'; a.click();
-      URL.revokeObjectURL(url);
+  if (exportBtn) exportBtn.addEventListener('click', () => {
+    const headers = ['date','victim','details','volume','severity','source'];
+    const lines = [headers.join(',')];
+    window.__leaks.forEach(r => {
+      lines.push([
+        r.date, JSON.stringify(r.victim), JSON.stringify(r.details.join(' | ')),
+        JSON.stringify(r.volume), JSON.stringify(r.severity), JSON.stringify(r.source)
+      ].join(','));
     });
-  }
+    const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'wordpirates-leaks.csv'; a.click();
+    URL.revokeObjectURL(url);
+  });
 
-  // Import JSON sécurisé
   const importBtn = document.getElementById('import');
-  if (importBtn) {
-    importBtn.addEventListener('click', () => {
-      const txt = prompt('Colle un JSON (tableau) d\'incidents à importer (max 200 éléments)');
-      if (!txt) return;
-      try {
-        const arr = JSON.parse(txt);
-        if (!Array.isArray(arr)) throw 'Doit être un tableau';
-        if (arr.length > 200) throw 'Trop d\'éléments, max 200';
-        const validArr = arr.map(validateLeak);
-        window.__leaks.push(...validArr);
-        renderTable(window.__leaks);
-        alert('Import OK: ' + validArr.length + ' éléments');
-      } catch (e) {
-        alert('JSON invalide: ' + e);
-      }
-    });
-  }
+  if (importBtn) importBtn.addEventListener('click', () => {
+    const txt = prompt('Colle un JSON (tableau) d\'incidents à importer (max 100 éléments et 50 caractères par champ)');
+    if (!txt) return;
+    try {
+      const arr = JSON.parse(txt);
+      if (!Array.isArray(arr)) throw 'Doit être un tableau';
+      if (arr.length > 100) throw 'Trop d\'éléments, max 100';
+      const validArr = arr.map(validateLeak);
+      window.__leaks.push(...validArr);
+      renderTable(window.__leaks);
+      alert('Import OK: ' + validArr.length + ' éléments');
+    } catch (e) {
+      alert('JSON invalide: ' + e);
+    }
+  });
 
-  // Modal close
   const closeBtn = document.getElementById('close');
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
   const modal = document.querySelector('.modal');
   if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 });
