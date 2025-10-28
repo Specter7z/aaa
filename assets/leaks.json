@@ -2,574 +2,955 @@
   {
     "date": "2025-10-23",
     "victim": "Fédération Française de Tir",
-    "details": [
-      "numéro de licence",
-      "état civil",
-      "adresse postale",
-      "email",
-      "numéro de téléphone"
-    ],
-    "volume": "~?",
+    "details": ["numéro de licence", "état civil", "adresse postale", "email", "numéro de téléphone"],
+    "volume": null,
     "severity": "medium",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-10-22",
     "victim": "Agences Régionales de Santé (Île-de-France, Auvergne, Rhône-Alpes, Hauts-de-France, Pays de la Loire, Normandie)",
-    "details": [
-      "dossiers médicaux"
-    ],
-    "volume": "~34,000,000",
+    "details": ["dossiers médicaux", "données patients"],
+    "volume": "≈34,000,000",
     "severity": "critical",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": "Regroupement multi-ARS"
   },
   {
     "date": "2025-10-19",
     "victim": "Centre hospitalier intercommunal de Haute-Comté",
-    "details": [
-      "ransomware / indisponibilité"
-    ],
-    "volume": "unknown",
+    "details": ["ransomware", "indisponibilité / exfiltration possible"],
+    "volume": null,
     "severity": "high",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-10-15",
-    "victim": "Mango (service clients)",
-    "details": [
-      "prénom",
-      "pays",
-      "code postal",
-      "email",
-      "téléphone"
-    ],
-    "volume": "?",
+    "victim": "Mango",
+    "details": ["prénom", "pays", "code postal", "adresse email", "numéro de téléphone"],
+    "volume": null,
     "severity": "low",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-10-14",
     "victim": "Agence Régionale de Santé des Hauts-de-France",
-    "details": [
-      "nom, prénom",
-      "NIR/numéro de sécurité sociale",
-      "données médicales potentielles",
-      "contacts"
-    ],
-    "volume": "?",
+    "details": ["nom, prénom", "sexe", "date et lieu de naissance", "email", "téléphone", "adresse postale", "numéro de sécurité sociale", "statut donneur d'organe", "données périnatales"],
+    "volume": null,
     "severity": "critical",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": "Données sensibles — inclut NIR"
   },
   {
     "date": "2025-10-12",
     "victim": "Lycées des Hauts-de-France",
-    "details": [
-      "pièces d'identité élèves",
-      "CV",
-      "relevés de notes"
-    ],
-    "volume": "?",
+    "details": ["pièces d'identité d'élèves", "CV", "relevés de notes"],
+    "volume": null,
     "severity": "high",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": "Données d'enfants — attention RGPD"
   },
   {
     "date": "2025-10-06",
-    "victim": "France Travail",
-    "details": [
-      "nom, prénom, identifiant France Travail, statut RSA"
-    ],
-    "volume": "5,500",
+    "victim": "France Travail (lot)",
+    "details": ["nom, prénom", "identifiant France Travail", "catégorie d'inscription", "adresse mail", "statut RSA", "identifiant CIR"],
+    "volume": "≈5,500",
     "severity": "medium",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-10-04",
-    "victim": "Discord (service)",
-    "details": [
-      "noms/pseudos, informations de paiement partielles, 4 derniers chiffres CB, IP, échanges support"
-    ],
-    "volume": "?",
+    "victim": "Discord (support / comptes)",
+    "details": ["noms/pseudos", "informations de paiement partielles", "4 derniers chiffres de CB", "historique des transactions", "adresse IP", "messages support", "pièces d'identité", "documents de preuve de majorité"],
+    "volume": null,
     "severity": "high",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-09-18",
     "victim": "Clarins",
-    "details": [
-      "données de contact clients"
-    ],
+    "details": ["données de contact clients", "commandes"],
     "volume": "100000+",
     "severity": "medium",
-    "source": "Bonjour la fuite"
-  },
-  {
-    "date": "2025-08-06",
-    "victim": "Air France",
-    "details": [
-      "nom/prénom, Flying Blue, demandes clients"
-    ],
-    "volume": "?",
-    "severity": "medium",
-    "source": "Bonjour la fuite"
-  },
-  {
-    "date": "2025-07-11",
-    "victim": "Sorbonne Université",
-    "details": [
-      "emails pro/perso, téléphone, adresse postale, données familiales"
-    ],
-    "volume": "?",
-    "severity": "medium",
-    "source": "Bonjour la fuite"
-  },
-  {
-    "date": "2024-10-25",
-    "victim": "Free",
-    "details": [
-      "abonnés, identifiants abonnés, IBAN partiel"
-    ],
-    "volume": "5,100,000",
-    "severity": "high",
-    "source": "Rapports publics"
-  },
-  {
-    "date": "2024-04-28",
-    "victim": "Ticketmaster (historique)",
-    "details": [
-      "données clients, transactions, 4 derniers chiffres CB"
-    ],
-    "volume": "560,000,000",
-    "severity": "critical",
-    "source": "Enquête"
+    "source": "Rapport presse",
+    "notes": ""
   },
   {
     "date": "2025-08-12",
     "victim": "Alltricks",
-    "details": [
-      "intrusion liste de diffusion"
-    ],
-    "volume": "?",
+    "details": ["intrusion liste de diffusion"],
+    "volume": null,
     "severity": "low",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-08-06",
+    "victim": "Air France",
+    "details": ["nom, prénom", "coordonnées", "n° et statut Flying Blue", "objet des demandes"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Annonce publique",
+    "notes": ""
   },
   {
     "date": "2025-07-21",
     "victim": "Auchan",
-    "details": [
-      "coordonnées clients, telephone, adresse postale, fidélité"
-    ],
-    "volume": "?",
+    "details": ["civilité", "nom, prénom", "email", "adresse postale", "numéro de téléphone", "numéro de carte de fidélité", "statut client"],
+    "volume": null,
     "severity": "medium",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-07-11",
+    "victim": "Sorbonne Université",
+    "details": ["nom, prénom", "email personnel & professionnel", "numéro de téléphone", "adresse postale", "infos familiales (conjoint, enfants)"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-07-11",
+    "victim": "Louis Vuitton",
+    "details": ["nom, prénom", "genre", "pays", "numéro de téléphone", "adresse postale", "email", "date de naissance", "données d'achats", "préférences"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-06-21",
+    "victim": "Hôpital privé de la Loire",
+    "details": ["nom, prénom", "date de naissance", "genre", "adresse postale", "téléphone", "NIR (numéro de sécurité sociale)", "documents administratifs", "résultats de consultation"],
+    "volume": "≈530,000",
+    "severity": "critical",
+    "source": "Bonjour la fuite",
+    "notes": "Données médicales sensibles"
+  },
+  {
+    "date": "2025-06-21",
+    "victim": "Disneyland (dumps)",
+    "details": ["données administratives (extrait)"],
+    "volume": "≈64GB",
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-06-03",
+    "victim": "Cartier",
+    "details": ["nom", "adresse courriel", "pays"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-06-03",
+    "victim": "Kaviari",
+    "details": ["nom, prénom, genre", "date de naissance", "email", "adresse postale", "numéro de téléphone", "identifiants", "mot de passe (hash?)", "historique des commandes"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-05-26",
+    "victim": "Autosur",
+    "details": ["nom, prénom", "email et adresse postale", "numéro de téléphone", "numéro de plaque d'immatriculation"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-05-13",
+    "victim": "Dior",
+    "details": ["entrée signalée (source)"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-05-13",
+    "victim": "Pulsy",
+    "details": ["nom, prénom", "genre", "date & commune de naissance", "adresse postale", "téléphone", "email", "données médicales", "parcours de soin", "dates & lieux d'hospitalisation"],
+    "volume": null,
+    "severity": "critical",
+    "source": "Bonjour la fuite",
+    "notes": "Données médicales sensibles"
+  },
+  {
+    "date": "2025-04-30",
+    "victim": "Cerballiance",
+    "details": ["données patient (extrait)"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-24",
+    "victim": "Carrefour Mobile",
+    "details": ["numéro de téléphone", "adresse email", "mot de passe", "adresse", "numéro de passeport"],
+    "volume": "≈64,000",
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-22",
+    "victim": "Easy Cash",
+    "details": ["nom, prénom", "date de naissance"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-18",
+    "victim": "Indigo",
+    "details": ["adresse email", "plaque d'immatriculation", "nom, prénom", "numéro de téléphone", "adresse postale"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-15",
+    "victim": "Afflelou",
+    "details": ["nom, prénom, date de naissance", "adresse postale, email", "numéro de téléphone", "informations commerciales"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-15",
+    "victim": "Hertz",
+    "details": ["nom", "coordonnées", "date de naissance", "permis de conduire", "numéro de carte de crédit", "passeport"],
+    "volume": null,
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-11",
+    "victim": "Harvest",
+    "details": ["gestion de patrimoine — comptes clients, entreprises (extrait)"],
+    "volume": "≈50,000 personnes, 5,000 entreprises",
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-07",
+    "victim": "UTWIN",
+    "details": ["identité", "adresse email", "numéro de téléphone"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-04-01",
+    "victim": "Reporterre",
+    "details": ["nom, prénom", "adresse courriel", "adresse postale"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-28",
+    "victim": "MAIF & BPCE (consolidé)",
+    "details": ["nom, genre, date de naissance", "situation matrimoniale et professionnelle", "adresse postale, email", "numéro de téléphone", "revenus, patrimoine", "numéro de sociétaire"],
+    "volume": null,
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-03-27",
     "victim": "Oracle Cloud (exposition)",
-    "details": [
-      "authentification LDAP, serveur SSO, clefs d'authentification"
-    ],
-    "volume": "~6,000,000",
+    "details": ["authentification LDAP", "serveur SSO", "clefs d'authentification"],
+    "volume": "≈6,000,000",
     "severity": "critical",
-    "source": "Rapports"
+    "source": "Rapports",
+    "notes": "Accès infrastructure critique"
   },
   {
-    "date": "2025-01-24",
-    "victim": "Fédération Française Montagne Escalade",
-    "details": [
-      "nom, prénom, adresse, email, identifiant"
-    ],
-    "volume": "808,881",
-    "severity": "medium",
-    "source": "Bonjour la fuite"
-  },
-  {
-    "date": "2025-01-20",
-    "victim": "Fédération Française tir à l'arc",
-    "details": [
-      "nom, prénom, date de naissance, adresse postale, téléphone, email"
-    ],
-    "volume": "625,434",
-    "severity": "medium",
-    "source": "Bonjour la fuite"
-  },
-  {
-    "date": "2024-12-31",
-    "victim": "Cogitis",
-    "details": [
-      "données (gros dump)"
-    ],
-    "volume": "82GB",
+    "date": "2025-03-26",
+    "victim": "Centrale Nantes",
+    "details": ["rapports & projets privés", "login et hash des mots de passe utilisateurs", "code source", "documents administratifs"],
+    "volume": null,
     "severity": "high",
-    "source": "Rapports"
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-25",
+    "victim": "Cerballiance (2)",
+    "details": ["nom, prénom", "date de naissance", "adresse postale", "numéro sécurité sociale", "régime de mutuelle"],
+    "volume": null,
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": "Données sensibles"
+  },
+  {
+    "date": "2025-03-24",
+    "victim": "Autosur & Diagnosur",
+    "details": ["nom, prénom", "email et adresse postale", "numéro de téléphone", "numéro d'immatriculation"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-20",
+    "victim": "Éclaireuses et Éclaireurs de France",
+    "details": ["nom, prénom", "date et lieu de naissance", "adresse", "profession", "email, téléphone"],
+    "volume": "≈44,000",
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": "Données d'adhérents"
+  },
+  {
+    "date": "2025-03-20",
+    "victim": "Intersport",
+    "details": ["transactions: n° transaction, facture, référence PayPal, code transaction, dates, montant, pseudo, adresse de facturation & livraison, identifiant utilisateur, nom & prénom, source paiement, n° carte fidélité"],
+    "volume": "≈3,400,000",
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-18",
+    "victim": "Direct Assurance",
+    "details": ["données clients (extrait)"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-13",
+    "victim": "Laforêt",
+    "details": ["dossier locataire", "pièces d'identité", "RIB"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-05",
+    "victim": "UTwin (2)",
+    "details": ["identité", "adresse email", "numéro de téléphone"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-04",
+    "victim": "Côté Sushi",
+    "details": ["nom, prénom", "date de naissance", "coordonnées", "programme de fidélité"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-03-04",
+    "victim": "La Poste",
+    "details": ["nom, prénom", "email", "adresse postale", "année de naissance", "numéro de téléphone"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-02-28",
+    "victim": "EDF DPIH",
+    "details": ["plan d'intervention et maintenance des centrales", "résultats des contrôles et opérations de sécurité", "identifiants des agents de maintenance"],
+    "volume": null,
+    "severity": "critical",
+    "source": "Bonjour la fuite",
+    "notes": "Infrastructure critique"
+  },
+  {
+    "date": "2025-02-28",
+    "victim": "Zephir",
+    "details": ["nom, prénom", "email", "téléphone", "IBAN"],
+    "volume": null,
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-02-28",
+    "victim": "École Nationale de la Sécurité",
+    "details": ["civilité, nom, prénom", "date de naissance", "adresse", "téléphone, email", "ville & pays de naissance", "nationalité", "numéro de sécurité sociale", "diplôme, niveau d'étude"],
+    "volume": "≈30,000",
+    "severity": "high",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-02-26",
+    "victim": "Nord Emploi",
+    "details": ["nom, prénom", "téléphone", "adresse", "n° allocataire", "formulaire RSA & CAF", "CV", "données administratives d'accompagnement"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-02-21",
     "victim": "Fédération Française de Foot",
-    "details": [
-      "nom, prénom, photo, justificatif d'identité"
-    ],
-    "volume": "?",
+    "details": ["nom, prénom", "genre", "date & lieu de naissance", "nationalité", "adresse postale", "email", "téléphone", "photo", "copie justificatif d'identité"],
+    "volume": null,
     "severity": "medium",
-    "source": "Bonjour la fuite"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
-    "date": "2025-01-01",
-    "victim": "Organisation_Test_0",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "100",
+    "date": "2025-02-19",
+    "victim": "Service Départemental d'Incendie et de Secours de la Vienne",
+    "details": ["login", "mot de passe hashé", "email"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-02-17",
+    "victim": "Sport Découverte",
+    "details": ["nom, prénom", "date de naissance", "numéro de téléphone", "adresse email"],
+    "volume": "≈488,023",
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-02-13",
+    "victim": "Mutuelle des motards",
+    "details": ["nom, prénom", "adresse email", "numéro de téléphone", "code postal"],
+    "volume": null,
     "severity": "low",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
-    "date": "2025-02-02",
-    "victim": "Organisation_Test_1",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "110",
-    "severity": "medium",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-03-03",
-    "victim": "Organisation_Test_2",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "120",
+    "date": "2025-02-12",
+    "victim": "Caisse des dépôts et des consignations",
+    "details": ["données employés / clients (extrait)"],
+    "volume": "≈70,000",
     "severity": "high",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
-    "date": "2025-04-04",
-    "victim": "Organisation_Test_3",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "130",
-    "severity": "critical",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-05-05",
-    "victim": "Organisation_Test_4",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "140",
-    "severity": "low",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-06-06",
-    "victim": "Organisation_Test_5",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "150",
+    "date": "2025-02-12",
+    "victim": "Chronopost",
+    "details": ["nom, prénom", "numéro de téléphone", "adresse", "signature"],
+    "volume": null,
     "severity": "medium",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-07-07",
-    "victim": "Organisation_Test_6",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "160",
-    "severity": "high",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-08-08",
-    "victim": "Organisation_Test_7",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "170",
-    "severity": "critical",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-09-09",
-    "victim": "Organisation_Test_8",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "180",
-    "severity": "low",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-01-10",
-    "victim": "Organisation_Test_9",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "190",
-    "severity": "medium",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
     "date": "2025-02-11",
-    "victim": "Organisation_Test_10",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "200",
-    "severity": "high",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-03-12",
-    "victim": "Organisation_Test_11",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "210",
-    "severity": "critical",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-04-13",
-    "victim": "Organisation_Test_12",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "220",
+    "victim": "King Jouet",
+    "details": ["nom, prénom", "email", "numéro de téléphone", "détail de la commande"],
+    "volume": null,
     "severity": "low",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
-    "date": "2025-05-14",
-    "victim": "Organisation_Test_13",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "230",
-    "severity": "medium",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-06-15",
-    "victim": "Organisation_Test_14",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "240",
-    "severity": "high",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-07-16",
-    "victim": "Organisation_Test_15",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "250",
-    "severity": "critical",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-08-17",
-    "victim": "Organisation_Test_16",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "260",
+    "date": "2025-02-06",
+    "victim": "Espace-Recettes.fr (Vorwerk)",
+    "details": ["nom complet", "adresse postale", "adresse email", "numéro de téléphone", "préférences Thermomix"],
+    "volume": null,
     "severity": "low",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
-    "date": "2025-09-18",
-    "victim": "Organisation_Test_17",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "270",
-    "severity": "medium",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-01-19",
-    "victim": "Organisation_Test_18",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "280",
-    "severity": "high",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-02-20",
-    "victim": "Organisation_Test_19",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "290",
+    "date": "2025-01-27",
+    "victim": "AIDES",
+    "details": ["nom, prénom", "date de naissance", "adresse postale, téléphone, email", "IBAN", "numéro de sécurité sociale", "résultat d'examen de santé"],
+    "volume": null,
     "severity": "critical",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": "Données médicales et bancaires"
   },
   {
-    "date": "2025-03-21",
-    "victim": "Organisation_Test_20",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "300",
-    "severity": "low",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-04-22",
-    "victim": "Organisation_Test_21",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "310",
+    "date": "2025-01-24",
+    "victim": "Fédération Française Montagne Escalade",
+    "details": ["nom, prénom", "adresse postale", "email", "identifiant", "date de naissance", "numéro de téléphone"],
+    "volume": "≈808,881",
     "severity": "medium",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": ""
   },
   {
-    "date": "2025-05-23",
-    "victim": "Organisation_Test_22",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "320",
+    "date": "2025-01-24",
+    "victim": "E.Leclerc",
+    "details": ["nom, prénom", "adresse email", "identifiant d'accès", "numéro de dossier", "montant de prime", "libellé de prestation"],
+    "volume": null,
+    "severity": "low",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-01-23",
+    "victim": "Fédération Française de la montagne et de l'escalade",
+    "details": ["nom, prénom", "sexe", "date de naissance", "adresse postale", "téléphone", "email"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-01-20",
+    "victim": "Fédération Française de tir à l'arc",
+    "details": ["nom, prénom", "sexe", "date de naissance", "adresse postale", "téléphone", "email", "photo de profil"],
+    "volume": "≈625,434",
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-01-14",
+    "victim": "Fédération Française de Force",
+    "details": ["comptes (extrait)"],
+    "volume": "≈64,512",
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-01-14",
+    "victim": "Fédération Française de Roller Skateboard",
+    "details": ["nom, prénom", "adresse email", "adresse postale", "date & lieu de naissance", "numéro de téléphone", "numéro de licence"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Bonjour la fuite",
+    "notes": ""
+  },
+  {
+    "date": "2025-01-14",
+    "victim": "Kiabi (credential stuffing incident)",
+    "details": ["nom, prénom", "date de naissance", "IBAN (extrait)"],
+    "volume": null,
     "severity": "high",
-    "source": "flux-test"
+    "source": "Bonjour la fuite",
+    "notes": "Credential stuffing"
   },
   {
-    "date": "2025-06-24",
-    "victim": "Organisation_Test_23",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "330",
-    "severity": "critical",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-07-25",
-    "victim": "Organisation_Test_24",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "340",
-    "severity": "low",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-08-26",
-    "victim": "Organisation_Test_25",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "350",
-    "severity": "medium",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-09-27",
-    "victim": "Organisation_Test_26",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "360",
+    "date": "2024-12-31",
+    "victim": "Cogitis",
+    "details": ["dump (extrait)"],
+    "volume": "≈82GB",
     "severity": "high",
-    "source": "flux-test"
+    "source": "Rapports",
+    "notes": ""
   },
   {
-    "date": "2025-01-28",
-    "victim": "Organisation_Test_27",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "370",
-    "severity": "critical",
-    "source": "flux-test"
+    "date": "2024-12-30",
+    "victim": "Atos (extrait)",
+    "details": ["données internes (extrait)"],
+    "volume": null,
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
   },
   {
-    "date": "2025-02-01",
-    "victim": "Organisation_Test_28",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "380",
-    "severity": "low",
-    "source": "flux-test"
-  },
-  {
-    "date": "2025-03-02",
-    "victim": "Organisation_Test_29",
-    "details": [
-      "email",
-      "nom",
-      "téléphone"
-    ],
-    "volume": "390",
+    "date": "2024-12-27",
+    "victim": "Volkswagen (données client / localisation)",
+    "details": ["données clients", "localisation"],
+    "volume": null,
     "severity": "medium",
-    "source": "flux-test"
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-27",
+    "victim": "Arsoé",
+    "details": ["incident signalé"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-26",
+    "victim": "Peugeot",
+    "details": ["incident signalé (extrait)"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-25",
+    "victim": "Cyberhaven (extrait)",
+    "details": ["exposition (extrait)"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-20",
+    "victim": "Electro Dépôt",
+    "details": ["incident signalé"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-20",
+    "victim": "Go Sport",
+    "details": ["incident signalé"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-20",
+    "victim": "Sport 2000",
+    "details": ["incident signalé"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-20",
+    "victim": "Wakanim",
+    "details": ["incident signalé"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-12",
+    "victim": "Top Achat",
+    "details": ["nom, prénom", "email", "adresse"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-10",
+    "victim": "LDLC",
+    "details": ["incident signalé (extrait)"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-04",
+    "victim": "Deloitte",
+    "details": ["incident signalé"],
+    "volume": null,
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-03",
+    "victim": "Guy Demarle",
+    "details": ["nom, prénom", "adresse postale", "email", "numéro de téléphone"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-12-02",
+    "victim": "Norauto",
+    "details": ["nom, prénom", "email", "adresse postale", "numéro de téléphone", "numéro de pièce d'identité (extrait)"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-27",
+    "victim": "Ze Camping",
+    "details": ["nom, prénom", "login", "mot de passe hashé", "date de naissance", "téléphone", "adresse postale"],
+    "volume": "≈1,600,000",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-26",
+    "victim": "JVS",
+    "details": ["nom, prénom", "adresse email", "login", "numéro de téléphone"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-24",
+    "victim": "SFR (lot)",
+    "details": ["nom, prénom", "adresse email", "adresse postale", "code postal", "ville", "date de naissance", "numéro de téléphone", "IBAN partiel"],
+    "volume": "≈3,600,000",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": "IBAN partiel exposé"
+  },
+  {
+    "date": "2024-11-23",
+    "victim": "Banque de France (extraits internes)",
+    "details": ["identité employés", "poste", "salaire", "identité clients", "comptes bancaires", "historique", "webmail", "documents stratégiques"],
+    "volume": null,
+    "severity": "critical",
+    "source": "Rapports",
+    "notes": "Données sensibles financières"
+  },
+  {
+    "date": "2024-11-22",
+    "victim": "Compagnie de Transport Strasbourgeoise",
+    "details": ["incident (détail inconnu)"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-21",
+    "victim": "Chambres d'agriculture (extrait)",
+    "details": ["données structurelles"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-19",
+    "victim": "Direct Assurance (novembre 2024)",
+    "details": ["nom", "adresse email", "numéros de téléphone", "IBAN (extrait)"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-19",
+    "victim": "Mediboard",
+    "details": ["nom, prénom", "date de naissance", "genre", "numéro de téléphone", "médecin traitant", "prescriptions", "historique des soins"],
+    "volume": "≈750,000",
+    "severity": "critical",
+    "source": "Rapports",
+    "notes": "Données médicales"
+  },
+  {
+    "date": "2024-11-19",
+    "victim": "Auchan (novembre 2024)",
+    "details": ["nom, prénom", "email", "adresse postale", "téléphone", "composition familiale", "date de naissance", "numéro de carte fidélité"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-18",
+    "victim": "Le Point",
+    "details": ["nom", "adresse email", "numéro de téléphone", "adresse postale", "date de naissance"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-14",
+    "victim": "Huttopia",
+    "details": ["nom, prénom", "adresse email"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-13",
+    "victim": "Molotov",
+    "details": ["adresse email", "nom, prénom", "date de naissance"],
+    "volume": "≈10,000,000",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-11-12",
+    "victim": "Picard",
+    "details": ["nom, prénom", "date de naissance", "email", "adresse postale", "numéro de téléphone", "numéro de carte fidélité", "points", "historique commandes"],
+    "volume": "≈45,000",
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-10-25",
+    "victim": "Free",
+    "details": ["nom, prénom", "date & lieu de naissance", "email", "adresse postale", "IBAN partiel", "identifiant abonné", "type d'offre", "date de souscription", "statut abonnement"],
+    "volume": "≈5,100,000",
+    "severity": "high",
+    "source": "Rapports publics",
+    "notes": ""
+  },
+  {
+    "date": "2024-10-25",
+    "victim": "Free Mobile",
+    "details": ["nom, prénom", "date de naissance", "lieu de naissance", "email", "adresse postale", "identifiant abonné", "type d'offre", "date de souscription"],
+    "volume": "≈14,100,000",
+    "severity": "high",
+    "source": "Rapports publics",
+    "notes": ""
+  },
+  {
+    "date": "2024-10-24",
+    "victim": "Ornikar",
+    "details": ["nom, prénom", "date de naissance", "adresse email", "adresse postale", "numéro de téléphone"],
+    "volume": "≈4,200,000",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-09-30",
+    "victim": "Meilleurtaux",
+    "details": ["nom, prénom", "date de naissance", "pays de naissance", "adresse postale", "numéro de téléphone", "situation professionnelle", "revenus"],
+    "volume": null,
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-09-18",
+    "victim": "RED by SFR",
+    "details": ["nom, prénom", "email", "adresse postale", "numéro de téléphone", "IBAN (extrait)", "type de forfait", "identifiant SIM", "identifiant smartphone"],
+    "volume": "≈tens of thousands",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-09-13",
+    "victim": "Assurance retraite",
+    "details": ["nom, prénom", "adresse", "numéro de sécurité sociale", "montant approximatif des ressources"],
+    "volume": "≈370,000",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-09-12",
+    "victim": "Cybertek",
+    "details": ["nom, prénom", "adresse email", "adresse postale", "numéro de téléphone"],
+    "volume": null,
+    "severity": "low",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-09-10",
+    "victim": "Cultura",
+    "details": ["nom, prénom", "email", "adresse postale", "numéro de téléphone", "historique des commandes"],
+    "volume": "≈1,500,000",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-09-07",
+    "victim": "Boulanger",
+    "details": ["nom, prénom", "email", "adresse postale", "numéro de téléphone"],
+    "volume": "≈hundreds of thousands",
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-04-28",
+    "victim": "Ticketmaster (historique)",
+    "details": ["nom, prénom", "adresse email", "adresse postale", "numéro de téléphone", "historique des transactions", "informations bancaires (4 derniers numéros de CB & date d'expiration)"],
+    "volume": "≈560,000,000",
+    "severity": "critical",
+    "source": "Enquête",
+    "notes": "Très large impact"
+  },
+  {
+    "date": "2024-04-15",
+    "victim": "Le Slip Français",
+    "details": ["nom", "prénom", "téléphones", "adresse postale", "adresse email", "numéros de commandes"],
+    "volume": "≈1,500,000",
+    "severity": "medium",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-03-08",
+    "victim": "France Travail (historique)",
+    "details": ["nom, prénom", "numéro de sécurité sociale", "adresse email", "adresse postale", "numéro de téléphone", "identifiants France Travail"],
+    "volume": "≈43,000,000",
+    "severity": "critical",
+    "source": "Rapports",
+    "notes": "Données centralisées très sensibles"
+  },
+  {
+    "date": "2024-03-01",
+    "victim": "LDLC (historique)",
+    "details": ["nom, prénom", "adresse email", "adresse postale", "numéro de téléphone"],
+    "volume": "≈1,500,000",
+    "severity": "high",
+    "source": "Rapports",
+    "notes": ""
+  },
+  {
+    "date": "2024-02-06",
+    "victim": "Almerys / Viamedis (consolidé)",
+    "details": ["nom, prénom", "date de naissance", "numéro de sécurité sociale", "nom de l'assureur de santé", "contrat souscrit"],
+    "volume": "≈33,000,000",
+    "severity": "critical",
+    "source": "Rapports",
+    "notes": "Données santé massives"
+  },
+  {
+    "date": "2016-10-01",
+    "victim": "Dailymotion (historique)",
+    "details": ["nom d'utilisateur", "adresse email", "hachage mot de passe"],
+    "volume": "≈85,000,000",
+    "severity": "high",
+    "source": "Historique",
+    "notes": ""
+  },
+  {
+    "date": "2025-08-20",
+    "victim": "Exemples synthétiques (tests)",
+    "details": ["email", "nom", "téléphone"],
+    "volume": null,
+    "severity": "low",
+    "source": "flux-test",
+    "notes": "entrées synthétiques pour la timeline"
   }
 ]
