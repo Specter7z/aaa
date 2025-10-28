@@ -5,10 +5,10 @@
   --accent: #10b981;
   --accent-2: #06b6d4;
   --glass: rgba(255, 255, 255, 0.03);
-  --shadow: rgba(0, 0, 0, 0.6);
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
-/* Global Reset */
+/* === GLOBAL RESET === */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +22,7 @@ body.wp-bg {
   min-height: 100vh;
 }
 
-/* Container */
+/* === CONTAINER === */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -30,9 +30,9 @@ body.wp-bg {
   width: 100%;
 }
 
-/* Header */
+/* === HEADER === */
 .wp-header {
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   background: var(--panel);
   padding: 12px 0;
 }
@@ -43,7 +43,7 @@ body.wp-bg {
   justify-content: space-between;
 }
 
-/* Logo / Brand */
+/* === BRAND / LOGO === */
 .brand {
   display: flex;
   gap: 12px;
@@ -58,13 +58,12 @@ body.wp-bg {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #fff; /* plus visible */
+  color: #0f172a;
   font-family: monospace;
   box-shadow: 0 4px 12px var(--shadow);
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
-/* Navigation */
+/* === NAVIGATION === */
 .nav a {
   color: #cfeafe;
   margin-left: 14px;
@@ -76,25 +75,37 @@ body.wp-bg {
 }
 .nav a:hover,
 .nav a:focus {
-  background: rgba(16,185,129,0.2);
+  background: rgba(16, 185, 129, 0.2);
+  color: #fff;
   outline: none;
-  color: #ffffff;
 }
 
-/* Main / Hero */
-.main { padding: 30px 0; }
+/* === MAIN / HERO === */
+.main {
+  padding: 30px 0;
+}
 .hero {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
   padding: 28px;
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--shadow);
   min-height: 100px;
 }
-.hero h2 { margin: 0; font-size: 26px; }
-.muted { color: var(--muted); }
+.hero h2 {
+  margin: 0;
+  font-size: 26px;
+}
+.muted {
+  color: var(--muted);
+}
 
-/* Buttons */
-.actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+/* === BUTTONS === */
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 .btn {
   background: var(--accent);
   color: #0f172a;
@@ -106,41 +117,44 @@ body.wp-bg {
   text-align: center;
 }
 .btn:hover,
-.btn:focus { background: var(--accent-2); outline: none; }
-.btn.ghost {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #ffffff;
+.btn:focus {
+  background: var(--accent-2);
+  outline: none;
 }
-.btn.ghost:hover,
-.btn.ghost:focus {
-  background: rgba(16,185,129,0.15);
-  border-color: var(--accent);
-  color: #0f172a;
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* Victim Link */
+/* === LINKS (VICTIMS) === */
 button.link.victim {
-  background: rgba(16,185,129,0.1);
-  color: #10b981;
-  border: 1px solid rgba(16,185,129,0.3);
-  border-radius: 6px;
-  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  color: var(--accent-2);
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.2s;
+  text-decoration: underline;
+  transition: color 0.2s;
 }
 button.link.victim:hover,
 button.link.victim:focus {
-  background: var(--accent);
-  color: #0f172a;
-  border-color: var(--accent-2);
+  color: var(--accent);
   outline: none;
 }
 
-/* Overview Cards */
-.overview { margin-top: 24px; }
-.cards { display: flex; flex-wrap: wrap; gap: 12px; }
+/* === OVERVIEW CARDS === */
+.overview {
+  margin-top: 24px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 .card {
   background: var(--panel);
   padding: 16px;
@@ -151,14 +165,19 @@ button.link.victim:focus {
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px var(--shadow); }
-.num { font-size: 20px; font-weight: 700; }
-.small { font-size: 13px; }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--shadow);
+}
+.num {
+  font-size: 20px;
+  font-weight: 700;
+}
+.small {
+  font-size: 13px;
+}
 
-/* Panels */
-.how { margin-top: 18px; background: var(--panel); padding: 18px; border-radius: 12px; }
-
-/* Table */
+/* === TABLE === */
 .table-wrap {
   margin-top: 16px;
   background: var(--panel);
@@ -167,7 +186,12 @@ button.link.victim:focus {
   overflow-x: auto;
   box-shadow: 0 4px 12px var(--shadow);
 }
-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 600px;
+}
 thead th {
   padding: 10px;
   text-align: left;
@@ -177,43 +201,85 @@ thead th {
 }
 tbody td {
   padding: 10px;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   vertical-align: middle;
 }
 
-/* Toolbar / Inputs */
+/* === TOOLBAR === */
 .toolbar {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 8px;
+  align-items: center;
+}
+.toolbar input,
+.toolbar select,
+.toolbar button {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.2s ease;
+  appearance: none;
+}
+.toolbar select {
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  color: #e2e8f0;
+  cursor: pointer;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+}
+.toolbar select:hover,
+.toolbar select:focus {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--accent);
+  color: #fff;
+  outline: none;
 }
 .toolbar input {
-  flex: 1 1 150px;
-  padding: 8px;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
-  color: inherit;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
 }
-.toolbar select, .toolbar button {
-  padding: 8px;
-  border-radius: 6px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.05);
-  color: inherit;
+.toolbar input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+.toolbar input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(16,185,129,0.1);
+}
+.toolbar button {
+  background: var(--accent);
+  color: #0f172a;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
 }
 .toolbar button:hover,
-.toolbar select:hover,
-.toolbar button:focus,
-.toolbar select:focus {
-  background: rgba(255,255,255,0.05);
+.toolbar button:focus {
+  background: var(--accent-2);
+  color: #fff;
   outline: none;
 }
 
-/* Sources Grid */
+/* --- Correction affichage menu déroulant --- */
+.toolbar select,
+.toolbar select option {
+  background-color: #0b1623;
+  color: #e2e8f0;
+}
+.toolbar select option:hover,
+.toolbar select option:checked {
+  background-color: var(--accent);
+  color: #0f172a;
+}
+.toolbar select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(16,185,129,0.3);
+}
+
+/* === SOURCES GRID === */
 .sources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -227,25 +293,27 @@ tbody td {
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.2s;
 }
-.source:hover { transform: translateY(-2px); }
+.source:hover {
+  transform: translateY(-2px);
+}
 
-/* Footer */
+/* === FOOTER === */
 .wp-footer {
-  border-top: 1px solid rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
   padding: 12px;
   margin-top: 20px;
   text-align: center;
   color: var(--muted);
 }
 
-/* Modal */
+/* === MODAL === */
 .modal {
   position: fixed;
   inset: 0;
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(2,6,23,0.85);
+  background: rgba(2, 6, 23, 0.85);
   z-index: 999;
   padding: 10px;
 }
@@ -258,6 +326,7 @@ tbody td {
   box-shadow: 0 8px 24px var(--shadow);
   overflow-y: auto;
   max-height: 90vh;
+  position: relative;
 }
 .modal .modal-inner button {
   position: absolute;
@@ -270,7 +339,7 @@ tbody td {
   cursor: pointer;
 }
 
-/* Badges */
+/* === BADGES === */
 .badge {
   display: inline-block;
   padding: 2px 8px;
@@ -283,13 +352,13 @@ tbody td {
 .badge-med { background: #facc15; color: #000; }
 .badge-low { background: #10b981; color: #000; }
 
-/* Animations */
+/* === ANIMATIONS === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Tweaks */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .cards { flex-direction: column; }
   .toolbar { flex-direction: column; align-items: stretch; }
