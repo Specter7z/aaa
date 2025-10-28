@@ -13,7 +13,7 @@ body.wp-bg{background:linear-gradient(180deg,#041020 0%,#07111a 100%);color:#dbe
 .wp-header{border-bottom:1px solid rgba(255,255,255,0.04);background:var(--panel);}
 .wp-header.small .container{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;gap:12px;align-items:center}
-.logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#042; font-family:monospace}
+.logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:rgb(119, 0, 255); font-family:monospace}
 .nav a{color:#cfeafe;margin-left:14px;text-decoration:none;font-size:15px;padding:8px;border-radius:6px}
 .main{padding:30px 0}
 .hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:12px}
