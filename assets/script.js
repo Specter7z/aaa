@@ -1,9 +1,10 @@
-// WordPirates frontend script - minimal dependency
+// WordPirates frontend script - sécurisé
 async function fetchLeaks() {
   try {
     const res = await fetch('assets/leaks.json');
     if (!res.ok) throw new Error('Impossible de charger leaks.json');
     const json = await res.json();
+    if (!Array.isArray(json)) throw new Error('Format JSON invalide');
     return json;
   } catch (e) {
     console.error(e);
@@ -26,23 +27,36 @@ function escapeHtml(str) {
   );
 }
 
+// Validation d'un incident
+function validateLeak(leak) {
+  return {
+    date: typeof leak.date === 'string' ? leak.date : '',
+    victim: typeof leak.victim === 'string' ? leak.victim : 'inconnu',
+    details: Array.isArray(leak.details) ? leak.details.map(d => typeof d === 'string' ? d : '') : [],
+    severity: ['critical','high','medium','low'].includes(leak.severity) ? leak.severity : 'low',
+    volume: typeof leak.volume === 'string' ? leak.volume : '',
+    source: typeof leak.source === 'string' ? leak.source : ''
+  };
+}
+
 function renderTable(rows) {
   const tbody = document.querySelector('#leaks-table tbody');
   if (!tbody) return;
   tbody.innerHTML = '';
 
   rows.forEach(r => {
+    const leak = validateLeak(r);
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td>${r.date || ''}</td>
-      <td><button class="link victim">${escapeHtml(r.victim || '')}</button></td>
-      <td>${escapeHtml((r.details || []).slice(0, 3).join(', '))}${(r.details || []).length > 3 ? ' ...' : ''}</td>
-      <td>${escapeHtml(r.volume || '')}</td>
-      <td>${severityBadge(r.severity)}</td>
-      <td>${escapeHtml(r.source || '')}</td>
+      <td>${escapeHtml(leak.date)}</td>
+      <td><button class="link victim">${escapeHtml(leak.victim)}</button></td>
+      <td>${escapeHtml(leak.details.slice(0,3).join(', '))}${leak.details.length > 3 ? ' ...' : ''}</td>
+      <td>${escapeHtml(leak.volume)}</td>
+      <td>${severityBadge(leak.severity)}</td>
+      <td>${escapeHtml(leak.source)}</td>
     `;
     const btn = tr.querySelector('.victim');
-    if (btn) btn.addEventListener('click', () => openModal(r));
+    if (btn) btn.addEventListener('click', () => openModal(leak));
     tbody.appendChild(tr);
   });
 
@@ -57,11 +71,13 @@ function openModal(r) {
   const body = document.getElementById('modal-body');
   if (!modal || !body) return;
 
+  const leak = validateLeak(r);
+
   body.innerHTML = `
-    <h3>${escapeHtml(r.victim || '')}</h3>
-    <p class="muted">${r.date || ''} — Source: ${escapeHtml(r.source || '')}</p>
-    <div><strong>Données exposées</strong><ul>${(r.details || []).map(d => '<li>' + escapeHtml(d) + '</li>').join('')}</ul></div>
-    <div class="muted small">Volume: ${escapeHtml(r.volume || 'inconnu')} — Gravité: ${escapeHtml(r.severity || 'n/a')}</div>
+    <h3>${escapeHtml(leak.victim)}</h3>
+    <p class="muted">${escapeHtml(leak.date)} — Source: ${escapeHtml(leak.source)}</p>
+    <div><strong>Données exposées</strong><ul>${leak.details.map(d => '<li>'+escapeHtml(d)+'</li>').join('')}</ul></div>
+    <div class="muted small">Volume: ${escapeHtml(leak.volume || 'inconnu')} — Gravité: ${escapeHtml(leak.severity)}</div>
     <div class="muted small" style="margin-top:8px">Actions recommandées: recouper la source, isoler, rotater les identifiants, notifier les autorités si nécessaire.</div>
   `;
   modal.style.display = 'flex';
@@ -74,16 +90,16 @@ function closeModal() {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const leaks = await fetchLeaks();
-  window.__leaks = leaks;
-  renderTable(leaks);
+  window.__leaks = leaks.map(validateLeak);
+  renderTable(window.__leaks);
 
   // Recherche
   const qInput = document.getElementById('q');
   if (qInput) {
     qInput.addEventListener('input', e => {
       const q = e.target.value.toLowerCase();
-      const filtered = leaks.filter(r =>
-        (r.victim + ' ' + (r.details || []).join(' ') + ' ' + (r.source || '')).toLowerCase().includes(q)
+      const filtered = window.__leaks.filter(r =>
+        (r.victim + ' ' + r.details.join(' ') + ' ' + r.source).toLowerCase().includes(q)
       );
       renderTable(filtered);
     });
@@ -94,7 +110,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (filterYear) {
     filterYear.addEventListener('change', e => {
       const y = e.target.value;
-      renderTable(y === 'all' ? leaks : leaks.filter(r => r.date && r.date.startsWith(y)));
+      renderTable(y === 'all' ? window.__leaks : window.__leaks.filter(r => r.date.startsWith(y)));
     });
   }
 
@@ -103,7 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (filterSev) {
     filterSev.addEventListener('change', e => {
       const v = e.target.value;
-      renderTable(v === 'all' ? leaks : leaks.filter(r => r.severity === v));
+      renderTable(v === 'all' ? window.__leaks : window.__leaks.filter(r => r.severity === v));
     });
   }
 
@@ -111,17 +127,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const exportBtn = document.getElementById('export');
   if (exportBtn) {
     exportBtn.addEventListener('click', () => {
-      const rows = leaks;
-      const headers = ['date', 'victim', 'details', 'volume', 'severity', 'source'];
+      const rows = window.__leaks;
+      const headers = ['date','victim','details','volume','severity','source'];
       const lines = [headers.join(',')];
       rows.forEach(r => {
         lines.push([
-          r.date || '',
-          JSON.stringify(r.victim || ''),
-          JSON.stringify((r.details || []).join(' | ')),
-          JSON.stringify(r.volume || ''),
-          JSON.stringify(r.severity || ''),
-          JSON.stringify(r.source || '')
+          r.date,
+          JSON.stringify(r.victim),
+          JSON.stringify(r.details.join(' | ')),
+          JSON.stringify(r.volume),
+          JSON.stringify(r.severity),
+          JSON.stringify(r.source)
         ].join(','));
       });
       const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
@@ -131,18 +147,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Import JSON
+  // Import JSON sécurisé
   const importBtn = document.getElementById('import');
   if (importBtn) {
     importBtn.addEventListener('click', () => {
-      const txt = prompt('Colle un JSON (tableau) d\'incidents à importer (champ: date, victim, details[], severity, volume, source)');
+      const txt = prompt('Colle un JSON (tableau) d\'incidents à importer (max 200 éléments)');
       if (!txt) return;
       try {
         const arr = JSON.parse(txt);
         if (!Array.isArray(arr)) throw 'Doit être un tableau';
-        arr.forEach(i => leaks.push(i));
-        renderTable(leaks);
-        alert('Import OK: ' + arr.length + ' éléments');
+        if (arr.length > 200) throw 'Trop d\'éléments, max 200';
+        const validArr = arr.map(validateLeak);
+        window.__leaks.push(...validArr);
+        renderTable(window.__leaks);
+        alert('Import OK: ' + validArr.length + ' éléments');
       } catch (e) {
         alert('JSON invalide: ' + e);
       }
@@ -152,11 +170,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Modal close
   const closeBtn = document.getElementById('close');
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
   const modal = document.querySelector('.modal');
-  if (modal) {
-    modal.addEventListener('click', e => {
-      if (e.target === modal) closeModal();
-    });
-  }
+  if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 });
